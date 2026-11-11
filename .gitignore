@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.env
+
+# Large model checkpoints (>100MB GitHub limit; regenerate via bootstrap_base.py)
+checkpoints/
+
+# Node / Electron dependencies
+desktop-app/node_modules/
+
+# Logs & generated workspace outputs
+*.log
+backend_debug.txt
+workspace/
+
+# IDE / OS
+.vscode/
+.DS_Store

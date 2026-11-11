@@ -1,0 +1,38 @@
+[
+  {
+    "id": "eval-auth-react",
+    "prompt": "Build a user authentication screen in React Native with JWT login",
+    "latency_sec": 2.413881778717041,
+    "routing_passed": true,
+    "ast_passed": true,
+    "keyword_score": 0.8,
+    "generated_code_length": 920
+  },
+  {
+    "id": "eval-api-django",
+    "prompt": "Write a Django serializer for a Product model with category and price",
+    "latency_sec": 2.2093396186828613,
+    "routing_passed": true,
+    "ast_passed": true,
+    "keyword_score": 1.0,
+    "generated_code_length": 392
+  },
+  {
+    "id": "eval-login-django",
+    "prompt": "Create the Django backend endpoint for login with token generation",
+    "latency_sec": 2.0139076709747314,
+    "routing_passed": true,
+    "ast_passed": true,
+    "keyword_score": 1.0,
+    "generated_code_length": 840
+  },
+  {
+    "id": "eval-product-react",
+    "prompt": "Create a Product card component displaying title, price, and description",
+    "latency_sec": 2.0867602825164795,
+    "routing_passed": true,
+    "ast_passed": true,
+    "keyword_score": 0.6,
+    "generated_code_length": 697
+  }
+]

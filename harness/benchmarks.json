@@ -1,0 +1,26 @@
+[
+  {
+    "id": "eval-auth-react",
+    "prompt": "Build a user authentication screen in React Native with JWT login",
+    "expected_domain": "react_native",
+    "required_keywords": ["import", "useState", "TextInput", "Button", "axios"]
+  },
+  {
+    "id": "eval-api-django",
+    "prompt": "Write a Django serializer for a Product model with category and price",
+    "expected_domain": "python_backend",
+    "required_keywords": ["serializers.ModelSerializer", "class Meta", "model = Product"]
+  },
+  {
+    "id": "eval-login-django",
+    "prompt": "Create the Django backend endpoint for login with token generation",
+    "expected_domain": "python_backend",
+    "required_keywords": ["APIView", "Response", "authenticate", "RefreshToken"]
+  },
+  {
+    "id": "eval-product-react",
+    "prompt": "Create a Product card component displaying title, price, and description",
+    "expected_domain": "react",
+    "required_keywords": ["export const", "className", "title", "price", "desc"]
+  }
+]

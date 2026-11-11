@@ -1,0 +1,4 @@
+{
+    "instruction": "Design a FastAPI endpoint that processes a batch of user registrations using PyDantic V2 models with strict validation, implementing a PostgreSQL transaction that atomically inserts users into a 'users' table and their corresponding profile data into a 'profiles' table, with rollback on any validation or database error.",
+    "output": "Create a POST /batch-register endpoint using FastAPI. Define UserCreate and ProfileCreate Pydantic V2 models with ConfigDict(strict=True) and field validators. Use an asyncpg or SQLAlchemy async session. Wrap the logic in a try/except block. Begin a transaction, insert users into 'users' table, retrieve generated IDs, insert into 'profiles' table with foreign key references. If any ValidationError or DatabaseError occurs, rollback the transaction and raise HTTPException 422 or 500. Return a summary of created user IDs on success."
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Org-SLM</title>
+    <!-- Modern Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Titlebar for borderless window -->
+    <div id="titlebar">
+        <div id="drag-region">
+            <span class="app-title">Org-SLM</span>
+        </div>
+        <div id="window-controls">
+            <button class="control-btn" id="min-btn">─</button>
+            <button class="control-btn" id="max-btn">□</button>
+            <button class="control-btn close-btn" id="close-btn">✕</button>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon"></div>
+                    <h2>Org-SLM</h2>
+                </div>
+                <button class="new-chat-btn" id="new-chat-btn">
+                    <span>+</span> New Chat
+                </button>
+            </div>
+            
+            <div class="history-list">
+                <div class="history-section-title">Today</div>
+                <div class="history-item active">Build Authentication UI</div>
+                <div class="history-item">Python Serializer Bug</div>
+                
+                <div class="history-section-title">Previous 7 Days</div>
+                <div class="history-item">Setup Flutter App</div>
+                <div class="history-item">Dockerize Express API</div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="status-indicator">
+                    <div class="status-dot online"></div>
+                    <span>Local Server Connected</span>
+                </div>
+                <div class="version-tag">v2.0.0-slm</div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-area">
+            <div class="chat-header">
+                <h3>Build Authentication UI</h3>
+                <div class="model-selector">
+                    <select id="frontend-stack">
+                        <option value="">Auto Frontend</option>
+                        <option value="react">React</option>
+                        <option value="flutter">Flutter</option>
+                        <option value="nextjs">Next.js</option>
+                        <option value="react_native">React Native</option>
+                        <option value="angular">Angular</option>
+                    </select>
+                    <select id="backend-stack">
+                        <option value="">Auto Backend</option>
+                        <option value="python_backend">Django REST</option>
+                        <option value="python_fastapi">FastAPI</option>
+                        <option value="js_express">Node Express</option>
+                        <option value="dotnet">.NET Core</option>
+                        <option value="java_springboot">Spring Boot</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="dashboard-container" style="margin: 0 20px 20px 20px;">
+                <h2>System Orchestrator Core Diagnostics</h2>
+                
+                <div class="status-hud">
+                    Current State: <span id="current-state-badge" class="badge idle">Initializing...</span>
+                </div>
+
+                <div id="log-terminal" class="terminal-view">
+                    <div class="log-row system">[SYSTEM]: Standing by. Awaiting pipeline stream init...</div>
+                </div>
+            </div>
+
+            <style>
+                .terminal-view {
+                    background-color: #1e1e1e;
+                    color: #d4d4d4;
+                    font-family: 'Consolas', 'Courier New', monospace;
+                    padding: 15px;
+                    border-radius: 6px;
+                    height: 180px;
+                    overflow-y: auto;
+                    font-size: 13px;
+                    line-height: 1.5;
+                    border: 1px solid #333;
+                }
+                .log-row { margin-bottom: 4px; }
+                .log-row.INFO { color: #4fc1ff; }
+                .log-row.ERROR { color: #f44747; font-weight: bold; }
+                .log-row.SUCCESS { color: #6a9955; }
+                .status-hud { margin-bottom: 10px; font-weight: bold; }
+                .badge.active { color: #4fc1ff; }
+                .badge.idle { color: #858585; }
+                .dashboard-container h2 { font-size: 14px; color: #888; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
+            </style>
+
+            <div class="messages-container" id="messages-container">
+                <!-- Welcome Message -->
+                <div class="message assistant-message welcome-message">
+                    <div class="message-avatar">
+                        <div class="logo-icon-small"></div>
+                    </div>
+                    <div class="message-content">
+                        <h2>Hello, I'm your Local SLM.</h2>
+                        <p>I am powered by local LoRA adapters and a Parameterless Memory engine. Your code never leaves this machine.</p>
+                        <div class="suggestion-chips">
+                            <button class="chip" data-prompt="Build a beautiful login page in React">Build a beautiful login page in React</button>
+                            <button class="chip" data-prompt="Create a REST API for managing users in FastAPI">Create a REST API for managing users in FastAPI</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <div class="input-wrapper">
+                    <textarea id="prompt-input" rows="1" placeholder="Send a message to Org-SLM..."></textarea>
+                    <button id="send-btn" class="send-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 2L11 13M22 2L15 22L11 13M11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="disclaimer">Org-SLM can make mistakes. Consider verifying important code.</div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- We use a custom preload script to inject marked and DOMPurify securely, or load from node_modules if webPreferences allow it -->
+    <script src="renderer.js"></script>
+</body>
+</html>
